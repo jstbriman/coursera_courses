@@ -1,11 +1,14 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## makeCacheMatrix is a function that creates 4 functions that later are added in a list. It has 1 input parameter 
+## which is a matrix and is used as an input parameter of "get", 1 of the 4 functions stored in the list. Above each
+## of the function's declaration there is a short description about what is it used for.
 
 makeCacheMatrix <- function(x = matrix()) {
   
   inv <- NULL
+  #function that re-writes the matrix passed as an input parameter
   set <- function(y){
     x <<-y
     m <<-NULL
@@ -23,7 +26,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve tries to avoid calculating the inverse of the matrix that is stored in the list returned in makeCacheMatrix
+## first looking if it was computed (through the "set" function of the list in makeCacheMatrix) and in case it was not,
+## calculating it and storing it (through the "set_inv" function of the list in makeCacheMatrix) for later retrievals
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
